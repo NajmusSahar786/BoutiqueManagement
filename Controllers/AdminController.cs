@@ -12,23 +12,9 @@ namespace BoutiqueManagement.Controllers
     [Authorize(Roles = "Administrator")]
     public class AdminController : Controller
     {
-        private IItemService _service;
-        public AdminController(IItemService service)
-        {
-            this._service = service;
-        }
-
         // GET: Admin
         public ActionResult Index()
         {
-            this._service.Serve();
-            return View();
-        }
-
-        public ActionResult CreateItem()
-        {
-            ItemViewModel itemViewModel = new ItemViewModel();
-
             return View();
         }
     }

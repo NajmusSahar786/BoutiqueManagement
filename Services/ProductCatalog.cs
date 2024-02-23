@@ -28,11 +28,11 @@ namespace BoutiqueManagement.Services
             int success = SqlHelper.ExecuteQuery("NewUserRole", new { id = id });
             return success;
         }
-        public List<Product> GetProducts()
-        {
-            List<Product> products = new List<Product>();
+        //public List<Product> GetProducts()
+        //{
+        //    List<Product> products = new List<Product>();
             
-        }
+        //}
     }
 
 }
