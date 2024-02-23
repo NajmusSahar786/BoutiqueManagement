@@ -9,6 +9,6 @@ namespace BoutiqueManagement.Models
     {
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
-        public int BasicCategory { get; set; }
+        public int BaseCategory { get; set; }
     }
 }
