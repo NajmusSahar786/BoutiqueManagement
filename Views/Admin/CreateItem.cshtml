@@ -1,0 +1,61 @@
+﻿@model BoutiqueManagement.ViewModel.ItemViewModel
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@*<div class="form-group row">
+        <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+        </div>
+    </div>*@
+<div class="form-group row">
+    <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-10">
+        @*<input type="text" class="form-control" id="inputName" placeholder="Name">*@
+        @Html.TextBoxFor(m=>m.ItemName,new { @class = "form-control" })
+    </div>
+</div>
+
+<div class="form-group row">
+    <label for="inputPrice" class="col-sm-2 col-form-label">Price</label>
+    <div class="col-sm-10">
+        @Html.TextBoxFor(m=>m.Price,new { @class = "form-control" })
+    </div>
+</div>
+<div class="form-group row">
+    <label for="inputCategory" class="col-sm-2 col-form-label">Category</label>
+    <div class="col-sm-10">
+       
+        @Html.DropDownListFor(m=>m.CategoryId,new SelectList(Model.CategoryList, "CategoryId", "CategoryName"),"Select Category",new { @class = "form-control" })
+    </div>
+</div>
+<div class="form-group row">
+    <label for="inputBrand" class="col-sm-2 col-form-label">Brand</label>
+    <div class="col-sm-10">
+
+        @Html.DropDownListFor(m => m.BrandId, new SelectList(Model.BrandList, "BrandId", "BrandName"), "Select Brand", new { @class = "form-control" })
+    </div>
+</div>
+<div class="form-group row">
+    <label for="formFile" class="col-sm-2 col-form-label">Item Image</label>
+    <div class="col-sm-10">
+        <input type="file" id="formFile" class="form-control">
+    </div>
+    
+</div>
+<div class="form-group row">
+   
+    <div class="col-sm-12">
+        <input type="submit" class="btn btn-primary" id="btnSubmit">
+    </div>
+</div>

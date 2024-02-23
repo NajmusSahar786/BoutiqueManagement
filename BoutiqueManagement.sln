@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33920.266
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoutiqueManagement", "BoutiqueManagement.csproj", "{BFF241CC-CB99-4340-A5D4-D388134D7F78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityManagement", "IdentityManagement\IdentityManagement.csproj", "{0FC1591B-51F2-4036-836F-84181F1A94A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFF241CC-CB99-4340-A5D4-D388134D7F78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFF241CC-CB99-4340-A5D4-D388134D7F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFF241CC-CB99-4340-A5D4-D388134D7F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFF241CC-CB99-4340-A5D4-D388134D7F78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FC1591B-51F2-4036-836F-84181F1A94A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FC1591B-51F2-4036-836F-84181F1A94A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FC1591B-51F2-4036-836F-84181F1A94A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FC1591B-51F2-4036-836F-84181F1A94A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EA89BB76-B239-4AEC-9396-09D9835BC46C}
+	EndGlobalSection
+EndGlobal
