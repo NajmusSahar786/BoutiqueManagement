@@ -5,7 +5,7 @@ using System.Web;
 
 namespace BoutiqueManagement.Models
 {
-    public class BasicCategory
+    public class BaseCategory
     {
         public int Id { get; set; }
         public string Category { get; set; }

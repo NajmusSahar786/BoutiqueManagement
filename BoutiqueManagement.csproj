@@ -219,6 +219,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="IRepositories\" />
+    <Folder Include="Repositories\" />
     <Folder Include="UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>
