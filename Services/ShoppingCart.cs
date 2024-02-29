@@ -46,7 +46,7 @@ namespace BoutiqueManagement.Services
 
         public void RemoveFromCart(Product product, int quantity)
         {
-            var item = _items.FirstOrDefault(i => i.Product.Id == product.Id);
+            var item = _items.FirstOrDefault(i => i.Product.ProductId == product.ProductId);
 
 
             if (item != null)
@@ -72,7 +72,7 @@ namespace BoutiqueManagement.Services
 
             foreach (var item in _items)
             {
-                var product = _productCatalog.GetProduct(item.Product.Id);
+                var product = _productCatalog.GetProduct(item.Product.ProductId);
                 total += item.Quantity * product.Price;
             }
 

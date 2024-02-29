@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BoutiqueManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace BoutiqueManagement.IServices
 {
     public interface IItemService
     {
-        void Serve();
+        List<Item> GetItems();
     }
 }

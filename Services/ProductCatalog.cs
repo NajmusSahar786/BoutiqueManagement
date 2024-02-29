@@ -21,6 +21,7 @@ namespace BoutiqueManagement.Services
         public Product GetProduct(int id)
         {
             Product obj = new Product();
+            
             return obj;
         }
         public int GetProductbyId(int id)

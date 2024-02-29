@@ -13,9 +13,17 @@ namespace BoutiqueManagement.Controllers
     public class AdminController : Controller
     {
         // GET: Admin
+        private IItemService _itemService;
+
+        public AdminController(IItemService itemService)
+        {
+            _itemService = itemService;
+        }
+
         public ActionResult Index()
         {
-            return View();
+            var result=_itemService.GetItems();
+            return View(result);
         }
     }
 }

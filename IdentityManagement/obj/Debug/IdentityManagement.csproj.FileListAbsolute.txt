@@ -9,3 +9,5 @@ D:\BoutiqueManagement\IdentityManagement\bin\Debug\Microsoft.AspNet.Identity.Cor
 D:\BoutiqueManagement\IdentityManagement\obj\Debug\IdentityManagement.csproj.CopyComplete
 D:\BoutiqueManagement\IdentityManagement\obj\Debug\IdentityManagement.dll
 D:\BoutiqueManagement\IdentityManagement\obj\Debug\IdentityManagement.pdb
+D:\BoutiqueManagement\IdentityManagement\bin\Debug\Dapper.FastCrud.dll
+D:\BoutiqueManagement\IdentityManagement\bin\Debug\Dapper.FastCrud.xml
