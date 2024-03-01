@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using BoutiqueManagement.IServices;
 using BoutiqueManagement.Models;
+using BoutiqueManagement.Services;
 using BoutiqueManagement.ViewModel;
 
 namespace BoutiqueManagement.Controllers
@@ -15,6 +16,7 @@ namespace BoutiqueManagement.Controllers
         // GET: Admin
         private IItemService _itemService;
 
+     
         public AdminController(IItemService itemService)
         {
             _itemService = itemService;

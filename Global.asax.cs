@@ -13,6 +13,7 @@ namespace BoutiqueManagement
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            UnityConfig.RegisterComponents();
         }
     }
 }
