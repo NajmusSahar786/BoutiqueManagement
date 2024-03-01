@@ -136,5 +136,20 @@ namespace IdentityManagement.Data
             }
             return res;
         }
+
+        public static List<T> GetList<T>(string spName)
+        {
+            List<T> recordList = new List<T>();
+            using (SqlConnection objConnection = new SqlConnection(Utils.ConnectionString()))
+            {
+                objConnection.Open();
+               
+
+                recordList = SqlMapper.Query<T>(objConnection, spName, commandType: CommandType.StoredProcedure).ToList();
+                objConnection.Close();
+            }
+            return recordList;
+        }
+
     }
 }

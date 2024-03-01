@@ -17,9 +17,10 @@ namespace BoutiqueManagement.Repositories
             List<Item> result = null;
             try
             {
+               
                 using (var db = new SqlConnection(ConnectionString))
                 {
-                    SqlHelper.ExecuteProcedure("usp_GetAll_Items", new { });
+                   result= SqlHelper.GetList<Item>("usp_GetAll_Items");
                 }
             }
             catch (Exception ex)
