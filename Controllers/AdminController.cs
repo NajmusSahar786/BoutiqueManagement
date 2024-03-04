@@ -22,10 +22,12 @@ namespace BoutiqueManagement.Controllers
             _itemService = itemService;
         }
 
-        public ActionResult Index()
+        public JsonResult Index()
         {
             var result=_itemService.GetItems();
-            return View(result);
+            //return View(result);
+
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
     }
 }
