@@ -7,6 +7,7 @@ using BoutiqueManagement.IServices;
 using BoutiqueManagement.Models;
 using BoutiqueManagement.Services;
 using BoutiqueManagement.ViewModel;
+using Newtonsoft.Json;
 
 namespace BoutiqueManagement.Controllers
 {
@@ -22,11 +23,15 @@ namespace BoutiqueManagement.Controllers
             _itemService = itemService;
         }
 
-        public JsonResult Index()
-        {
-            var result=_itemService.GetItems();
-            //return View(result);
 
+        public ActionResult Index()
+        {
+            return View();
+        }
+        [HttpGet]
+        public JsonResult GetData()
+        {
+            var result = _itemService.GetItems();
             return Json(result, JsonRequestBehavior.AllowGet);
         }
     }
