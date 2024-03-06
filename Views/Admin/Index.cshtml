@@ -81,8 +81,8 @@
                             { "data": "ItemId" },
                             { "data": "ItemName", "class": "text-wrap" },
                             { "data": "Price" },
-                            { "data": "CategoryId" },
-                            { "data": "BrandId" },
+                            { "data": "CategoryName" },
+                            { "data": "BrandName" },
                             { "data": "ItemImage" }
 
                         ]
@@ -129,7 +129,20 @@
     });
 </script>
 <style>
-    .page-item:not(:first-child) .page-link {
+   /* .page-item:not(:first-child) .page-link {
         margin-left: calc(var(--bs-border-width) * -33);
+    }*/
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        box-sizing: border-box;
+        display: inline-block;
+        min-width: 1.5em;
+        padding: -0.5em 1em;
+        margin-left: 2px;
+        text-align: center;
+        text-decoration: none !important;
+        cursor: pointer;
+        color: #333 !important;
+        border: 1px solid transparent;
+        border-radius: 2px;
     }
 </style>

@@ -13,5 +13,7 @@ namespace BoutiqueManagement.Models
         public int CategoryId { get; set; }
         public int BrandId { get; set; }
         public byte[] ItemImage { get; set; }
+        public string CategoryName { get; set; }
+        public string BrandName { get; set; }
     }
 }
