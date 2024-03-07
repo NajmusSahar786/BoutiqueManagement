@@ -10,5 +10,7 @@ namespace BoutiqueManagement.IRepositories
     public interface IItemRepository
     {
         List<Item> GetItems();
+        List<Category> CategoryList();
+        List<Brand> BrandList(); 
     }
 }

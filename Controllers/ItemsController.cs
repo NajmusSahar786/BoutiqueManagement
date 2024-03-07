@@ -1,4 +1,6 @@
 ﻿using BoutiqueManagement.IServices;
+using BoutiqueManagement.Models;
+using BoutiqueManagement.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +29,23 @@ namespace BoutiqueManagement.Controllers
         {
             var result = _itemService.GetItems();
             return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public ActionResult AddItem()
+        {
+            var categories = _itemService.CategoryList();
+            var brands = _itemService.BrandList();
+            ItemViewModel itemViewModel = new ItemViewModel();
+            itemViewModel.BrandList = brands;
+            itemViewModel.CategoryList = categories;
+            return View(itemViewModel   );
+        }
+        [HttpPost]
+        public ActionResult AddItem(ItemViewModel itemViewModel)
+        {
+
+            return View();
         }
     }
 }

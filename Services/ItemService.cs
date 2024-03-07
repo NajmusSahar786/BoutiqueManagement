@@ -16,6 +16,34 @@ namespace BoutiqueManagement.Services
             _itemRepository = itemRepository;
         }
 
+        public List<Brand> BrandList()
+        {
+            List<Brand> result = null;
+            try
+            {
+                result = _itemRepository.BrandList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return result;
+        }
+
+        public List<Category> CategoryList()
+        {
+            List<Category> result = null;
+            try
+            {
+                result = _itemRepository.CategoryList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return result;
+        }
+
         public List<Item> GetItems()
         {
             List<Item> result = null;

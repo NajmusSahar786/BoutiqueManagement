@@ -30,5 +30,42 @@ namespace BoutiqueManagement.Repositories
             }
             return result;
         }
+        public List<Category> CategoryList()
+        {
+            List<Category> result = null;
+            try
+            {
+
+                using (var db = new SqlConnection(ConnectionString))
+                {
+                    result = SqlHelper.GetList<Category>("usp_GetAllCategories");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return result;
+        }
+
+        public List<Brand> BrandList()
+        {
+            List<Brand> result = null;
+            try
+            {
+
+                using (var db = new SqlConnection(ConnectionString))
+                {
+                    result = SqlHelper.GetList<Brand>("usp_Get_Brands");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return result;
+        }
     }
 }

@@ -10,5 +10,7 @@ namespace BoutiqueManagement.IServices
     public interface IItemService
     {
         List<Item> GetItems();
+        List<Category> CategoryList();
+        List<Brand> BrandList();
     }
 }

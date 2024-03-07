@@ -1,0 +1,53 @@
+﻿@model BoutiqueManagement.ViewModel.ItemViewModel
+@{
+    ViewBag.Title = "AddItem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Item Master</h2>
+<fieldset>
+    <legend>Item</legend>
+    @using (@Html.BeginForm())
+    {
+        <div class="formRowContainer">
+            <div class="labelContainer">Item Name</div>
+            <div class="valueContainer">
+                @Html.TextBoxFor(model => model.ItemName, new { @class = "form-control" })
+                @*@Html.ValidationMessage("Name")*@
+            </div>
+        </div>
+        <div class="clearStyle"></div>
+        <div class="formRowContainer">
+            <div class="labelContainer">Price</div>
+            <div class="valueContainer">@Html.TextBoxFor(model => model.Price, new { @class = "form-control" })</div>
+        </div>
+        <div class="clearStyle"></div>
+
+        <div class="formRowContainer">
+            <div class="labelContainer">Category</div>
+            <div class="valueContainer">
+                @Html.DropDownListFor(model => model.CategoryId, new SelectList(Model.CategoryList, "CategoryId", "CategoryName"), "--Select--", new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="clearStyle"></div>
+        <div class="formRowContainer">
+            <div class="labelContainer">Brand</div>
+            <div class="valueContainer">
+                @Html.DropDownListFor(model => model.BrandId, new SelectList(Model.BrandList, "BrandId", "BrandName"), "--Select--", new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="clearStyle"></div>
+        <div class="formRowContainer">
+            <div class="labelContainer"></div>
+            <div class="valueContainer">
+               
+            </div>
+        </div>
+        <div class="formRowContainer">
+            <div class="labelContainer"></div>
+            <div class="valueContainer">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </div>
+    }
+</fieldset>
