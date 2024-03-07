@@ -1,0 +1,30 @@
+﻿<nav class="navbar navbar-dark bg-dark">
+    @Html.ActionLink("Diva Collection", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <ul class="nav navbar-nav">
+        <li>
+            <span>@Html.ActionLink("Home", "Index", "Home")</span>
+            <span>@Html.ActionLink("About", "Index", "About")</span>
+            @if (IdentityManagement.Utilities.Utils.IfUserInRole("Member"))
+            {
+                <span>@Html.ActionLink("Member", "Index", "Member")</span>
+            }
+            else if (IdentityManagement.Utilities.Utils.IfUserInRole("Administrator"))
+            {
+                <span>@Html.ActionLink("Admin", "Index", "Admin")</span>
+                <span>@Html.ActionLink("Item", "Index", "Items")</span>
+            }
+
+            @if (IdentityManagement.Utilities.Utils.IfUserAuthenticated())
+            {
+                <span>@Html.ActionLink("Logout", "Logout", "Login")</span>
+
+            }
+            else
+            {
+
+                <span>@Html.ActionLink("Login", "Index", "Login")</span>
+            }
+        </li>
+
+    </ul>
+</nav>
