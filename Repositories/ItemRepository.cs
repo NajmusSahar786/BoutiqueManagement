@@ -67,5 +67,31 @@ namespace BoutiqueManagement.Repositories
             }
             return result;
         }
+        public int AddItem(Item item)
+        {
+            int result = 0;
+            try
+            {
+
+                using (var db = new SqlConnection(ConnectionString))
+                {
+                    result = SqlHelper.ExecuteProcedure("usp_add_Item",
+                        new 
+                        { 
+                            ItemName=item.ItemName, 
+                            Price=item.Price, 
+                            CategoryId=item.CategoryId, 
+                            BrandId=item.BrandId,
+                            ItemImage=item.ItemImage 
+                        });
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return result;
+        }
     }
 }

@@ -44,8 +44,13 @@ namespace BoutiqueManagement.Controllers
         [HttpPost]
         public ActionResult AddItem(ItemViewModel itemViewModel)
         {
-
-            return View();
+            Item item = new Item();
+            item.ItemName = itemViewModel.ItemName;
+            item.Price = itemViewModel.Price;
+            item.CategoryId = itemViewModel.CategoryId;
+            item.BrandId = itemViewModel.BrandId;
+            int result=_itemService.AddItem(item);
+            return RedirectToAction("Index");
         }
     }
 }

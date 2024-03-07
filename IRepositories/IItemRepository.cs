@@ -11,6 +11,7 @@ namespace BoutiqueManagement.IRepositories
     {
         List<Item> GetItems();
         List<Category> CategoryList();
-        List<Brand> BrandList(); 
+        List<Brand> BrandList();
+        int AddItem(Item item);
     }
 }
