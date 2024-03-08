@@ -15,5 +15,6 @@ namespace BoutiqueManagement.Models
         public byte[] ItemImage { get; set; }
         public string CategoryName { get; set; }
         public string BrandName { get; set; }
+        public string filePath { get; set; }
     }
 }

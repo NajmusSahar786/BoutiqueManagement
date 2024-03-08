@@ -7,7 +7,7 @@
 <h2>Item Master</h2>
 <fieldset>
     <legend>Item</legend>
-    @using (@Html.BeginForm())
+    @using (Html.BeginForm("AddItem", "Items", FormMethod.Post, new { encType = "multipart/form-data" }))
     {
         <div class="formRowContainer">
             <div class="labelContainer">Item Name</div>
@@ -38,9 +38,9 @@
         </div>
         <div class="clearStyle"></div>
         <div class="formRowContainer">
-            <div class="labelContainer"></div>
+            <div class="labelContainer">File</div>
             <div class="valueContainer">
-               
+                @Html.TextBoxFor(model => model.file, new { type = "file" })
             </div>
         </div>
         <div class="formRowContainer">

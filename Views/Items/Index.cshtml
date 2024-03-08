@@ -35,6 +35,9 @@
                         BrandId
                     </th>
                     <th>
+                        file Path
+                    </th>
+                    <th>
                         ItemImage
                     </th>
 
@@ -78,7 +81,7 @@
                         [
                             {
                                 "render": function (data, type, row) {
-                                    return '<a href="/Items/Edit/' + row.ItemId + '"><i class="fa fa-edit" style="font-size:17px;"></i></a>&nbsp;&nbsp;<a href="/Items/Delete/"><i class="fa fa-trash" style="font-size:17px;"></i></a>';
+                                    return '<a href="/Items/Edit/' + row.ItemId + '"><i class="fa fa-edit" style="font-size:17px;"></i></a>&nbsp;&nbsp;<a href="/Items/Delete/' + row.ItemId + '"><i class="fa fa-trash" style="font-size:17px;"></i></a>&nbsp;&nbsp;<a href="/Items/OpenFile/?fileName=' + row.filePath + '"><i class="fa fa-picture-o" style="font-size:17px;"></i></a>';
                                 }
                             },
                             { "data": "ItemId" },
@@ -86,6 +89,7 @@
                             { "data": "Price" },
                             { "data": "CategoryName" },
                             { "data": "BrandName" },
+                            { "data": "filePath", "class": "text-wrap"},
                             { "data": "ItemImage" }
 
                         ]

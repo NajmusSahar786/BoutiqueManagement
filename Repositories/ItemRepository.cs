@@ -82,7 +82,8 @@ namespace BoutiqueManagement.Repositories
                             Price=item.Price, 
                             CategoryId=item.CategoryId, 
                             BrandId=item.BrandId,
-                            ItemImage=item.ItemImage 
+                            ItemImage=item.ItemImage ,
+                            filePath=item.filePath
                         });
                 }
             }
@@ -128,7 +129,8 @@ namespace BoutiqueManagement.Repositories
                             Price = item.Price,
                             CategoryId = item.CategoryId,
                             BrandId = item.BrandId,
-                            ItemImage = item.ItemImage
+                            ItemImage = item.ItemImage,
+                            filePath=item.filePath
                         });
                 }
             }
