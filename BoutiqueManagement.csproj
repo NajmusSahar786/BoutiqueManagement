@@ -507,6 +507,7 @@
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Shared\_MenuBar.cshtml" />
     <Content Include="Views\Items\AddItem.cshtml" />
+    <Content Include="Views\Items\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

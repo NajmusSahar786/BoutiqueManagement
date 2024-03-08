@@ -93,5 +93,51 @@ namespace BoutiqueManagement.Repositories
             }
             return result;
         }
+
+        public Item GetItemById(int id)
+        {
+            Item result = null;
+            try
+            {
+
+                using (var db = new SqlConnection(ConnectionString))
+                {
+                    result = SqlHelper.GetSingleRecord<Item>("usp_GetItem_By_Id", new { itemId =id});
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return result;
+        }
+        public int UpdateItem(Item item)
+        {
+            int result = 0;
+            try
+            {
+
+                using (var db = new SqlConnection(ConnectionString))
+                {
+                    result = SqlHelper.ExecuteProcedure("usp_update_Item",
+                        new
+                        {
+                            itemId=item.ItemId,
+                            ItemName = item.ItemName,
+                            Price = item.Price,
+                            CategoryId = item.CategoryId,
+                            BrandId = item.BrandId,
+                            ItemImage = item.ItemImage
+                        });
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return result;
+        }
     }
 }

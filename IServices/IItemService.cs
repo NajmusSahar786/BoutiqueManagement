@@ -13,5 +13,7 @@ namespace BoutiqueManagement.IServices
         List<Category> CategoryList();
         List<Brand> BrandList();
         int AddItem(Item item);
+        Item GetItemById(int id);
+        int UpdateItem(Item item);
     }
 }

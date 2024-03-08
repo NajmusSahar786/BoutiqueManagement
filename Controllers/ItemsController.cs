@@ -49,7 +49,39 @@ namespace BoutiqueManagement.Controllers
             item.Price = itemViewModel.Price;
             item.CategoryId = itemViewModel.CategoryId;
             item.BrandId = itemViewModel.BrandId;
+            item.ItemImage = itemViewModel.ItemImage;
             int result=_itemService.AddItem(item);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var data= _itemService.GetItemById(id);
+            var categories = _itemService.CategoryList();
+            var brands = _itemService.BrandList();
+            ItemViewModel itemViewModel = new ItemViewModel();
+            itemViewModel.BrandList = brands;
+            itemViewModel.CategoryList = categories;
+            itemViewModel.ItemId = data.ItemId;
+            itemViewModel.ItemName = data.ItemName;
+            itemViewModel.ItemImage = data.ItemImage;
+            itemViewModel.Price = data.Price;
+            itemViewModel.CategoryId=data.CategoryId;
+            itemViewModel.BrandId = data.BrandId;
+            return View(itemViewModel);
+        }
+        [HttpPost]
+        public ActionResult Edit(ItemViewModel itemViewModel)
+        {
+            Item item = new Item();
+            item.ItemName = itemViewModel.ItemName;
+            item.Price = itemViewModel.Price;
+            item.CategoryId = itemViewModel.CategoryId;
+            item.BrandId = itemViewModel.BrandId;
+            item.ItemImage = itemViewModel.ItemImage;
+            item.ItemId = itemViewModel.ItemId;
+            int result = _itemService.UpdateItem(item);
             return RedirectToAction("Index");
         }
     }

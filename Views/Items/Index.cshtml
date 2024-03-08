@@ -11,7 +11,7 @@
 <script src="~/Scripts/DataTables/dataTables.bootstrap4.min.js"></script>
 <div>
 
-    @Html.ActionLink("Add Item", "AddItem", "Items",new { @class="btn btn-primary" });
+    @Html.ActionLink("Add Item", "AddItem", "Items",new { @class="btn btn-primary" })
 </div>
 <div class="container">
     <div style="width:90%;margin:0 auto;">
@@ -78,7 +78,7 @@
                         [
                             {
                                 "render": function (data, type, row) {
-                                    return '<a href="/Items/Edit/"><i class="fa fa-edit" style="font-size:17px;"></i></a>&nbsp;&nbsp;<a href="/Items/Delete/"><i class="fa fa-trash" style="font-size:17px;"></i></a>';
+                                    return '<a href="/Items/Edit/' + row.ItemId + '"><i class="fa fa-edit" style="font-size:17px;"></i></a>&nbsp;&nbsp;<a href="/Items/Delete/"><i class="fa fa-trash" style="font-size:17px;"></i></a>';
                                 }
                             },
                             { "data": "ItemId" },

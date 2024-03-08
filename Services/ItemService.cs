@@ -58,12 +58,41 @@ namespace BoutiqueManagement.Services
             return result;
         }
 
+        public Item GetItemById(int id)
+        {
+            Item result = null;
+            try
+            {
+                result = _itemRepository.GetItemById(id);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return result;
+        }
+
         public List<Item> GetItems()
         {
             List<Item> result = null;
             try
             {
                 result= _itemRepository.GetItems();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return result;
+        }
+
+        public int UpdateItem(Item item)
+        {
+            int result = 0;
+            try
+            {
+                result = _itemRepository.UpdateItem(item);
             }
             catch (Exception ex)
             {

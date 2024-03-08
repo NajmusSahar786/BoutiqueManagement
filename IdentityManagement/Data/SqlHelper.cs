@@ -150,6 +150,17 @@ namespace IdentityManagement.Data
             }
             return recordList;
         }
+        public static T GetSingleRecord<T>(string spName, object param)
+        {
+            T objRecord = default(T);
+            using (SqlConnection objConnection = new SqlConnection(Utils.ConnectionString()))
+            {
+                objConnection.Open();
+                objRecord = SqlMapper.Query<T>(objConnection, spName, param, commandType: CommandType.StoredProcedure).FirstOrDefault();
+                objConnection.Close();
+            }
+            return objRecord;
+        }
 
     }
 }
