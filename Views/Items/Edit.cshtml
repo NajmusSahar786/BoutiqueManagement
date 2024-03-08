@@ -48,7 +48,13 @@
             @Html.ValidationMessageFor(model => model.BrandId, "select Brand", new { @class = "text-danger" })
         </div>
     </div>
-   
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ItemImage, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.ItemImage, new { type = "file" })
+        </div>
+    </div>
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">

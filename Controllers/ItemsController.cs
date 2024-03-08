@@ -82,6 +82,7 @@ namespace BoutiqueManagement.Controllers
             item.ItemImage = itemViewModel.ItemImage;
             item.ItemId = itemViewModel.ItemId;
             int result = _itemService.UpdateItem(item);
+
             return RedirectToAction("Index");
         }
     }

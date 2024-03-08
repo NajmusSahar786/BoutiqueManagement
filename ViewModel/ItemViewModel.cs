@@ -18,6 +18,7 @@ namespace BoutiqueManagement.ViewModel
         [Display(Name = "Brand")]
         public int BrandId { get; set; }
         public List<Brand> BrandList { get; set; }
+        [Display(Name = "Image")]
         public byte[] ItemImage { get; set; }
     }
 }
