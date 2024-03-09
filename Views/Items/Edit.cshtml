@@ -56,7 +56,7 @@
                 @Html.TextBoxFor(model => model.file, new { type = "file" })
                 @if (@ViewBag.filePath != null)
                 { 
-                <a href="/Items/OpenFilePath/?filePath=@System.Net.WebUtility.UrlEncode(@ViewBag.filePath)">View Image</a>
+                <a href="/Items/OpenFilePath/?filePath=@System.Net.WebUtility.UrlEncode(@ViewBag.filePath)"><i class="fa fa-picture-o" style="font-size:17px;"></i></a>
                 }
             </div>
         </div>
