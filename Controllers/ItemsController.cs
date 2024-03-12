@@ -54,10 +54,11 @@ namespace BoutiqueManagement.Controllers
             if (file != null && file.ContentLength > 0)
             {
                 string _FileName = Path.GetFileName(file.FileName);
-                _FileName = item.ItemName;
+                string ext = Path.GetExtension(file.FileName);
+                _FileName = item.ItemName + ext;
                 string _path = Path.Combine(Server.MapPath("~/UploadedFiles"), _FileName);
                 file.SaveAs(_path);
-                item.filePath = _path;
+                item.filePath = "~/UploadedFiles/"+_FileName;
                 // item.ItemImage = itemViewModel.ItemImage;
             }
             
@@ -101,7 +102,7 @@ namespace BoutiqueManagement.Controllers
                 _FileName = item.ItemName+ext;
                 string _path = Path.Combine(Server.MapPath("~/UploadedFiles"), _FileName);
                 file.SaveAs(_path);
-                item.filePath = _path;
+                item.filePath = "~/UploadedFiles/" + _FileName;
                // item.ItemImage = itemViewModel.ItemImage;
             }
             int result = _itemService.UpdateItem(item);

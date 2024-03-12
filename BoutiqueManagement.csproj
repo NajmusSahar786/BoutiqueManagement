@@ -505,9 +505,10 @@
     <Content Include="Scripts\jquery-3.7.1.min.map" />
     <Content Include="Views\Items\Index.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
-    <Content Include="Views\Shared\_MenuBar.cshtml" />
     <Content Include="Views\Items\AddItem.cshtml" />
     <Content Include="Views\Items\Edit.cshtml" />
+    <Content Include="Views\Shared\_LeftMenu.cshtml" />
+    <Content Include="Views\Shared\_TopMenu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

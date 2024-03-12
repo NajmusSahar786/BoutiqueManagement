@@ -15,16 +15,28 @@
     
 </head>
 <body>
-    <div>@Html.Partial("_MenuBar")</div>
-    <div></div>
+    <header class="row col-md-12 FullContent">
+      
+        <div class="d-block px-3 py-2 text-center text-bold text-white old-bv">
+            @Html.Partial("_TopMenu")
+        </div>
+    </header>
+    <div class="row col-md-12 FullContent">
+        <div class="col-md-2 CustomLeftnavbar" style="background-color:gainsboro">
+            @{Html.RenderPartial("~/Views/Shared/_LeftMenu.cshtml");}
+        </div>
+        <div class="container col-md-10" style="background-color:ivory">
+            <main role="main" class="CustomBody">
+                @RenderBody()
+            </main>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        </div>
     </div>
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+
 
 
 </body>

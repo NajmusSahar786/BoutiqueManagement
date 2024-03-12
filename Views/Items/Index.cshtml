@@ -3,64 +3,61 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Items</h2>
+<h2>Items  &nbsp;&nbsp;&nbsp;&nbsp; @Html.ActionLink("Add Item", "AddItem", "Items", new { @class = "btn btn-primary" })</h2>
 
 <link href="~/Content/DataTables/css/jquery.dataTables.css" rel="stylesheet" />
 <link href="~/Content/DataTables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
 <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
 <script src="~/Scripts/DataTables/dataTables.bootstrap4.min.js"></script>
-<div>
-    @Html.ActionLink("Add Item", "AddItem", "Items",new { @class="btn btn-primary" })
-</div>
-<div class="container">
-    <div style="width:90%;margin:0 auto;">
-        <table id="demoGrid" class="table table-striped table-bordered" width="100%" cellspacing="0">
-            <thead>
-                <tr>
-                    <th>Action</th>
-                    <th>
-                        ItemId
-                    </th>
-                    <th>
-                        ItemName
-                    </th>
-                    <th>
-                        Price
-                    </th>
-                    <th>
-                        CategoryId
-                    </th>
-                    <th>
-                        BrandId
-                    </th>
-                    <th>
-                        file Path
-                    </th>
-                    <th>
-                        ItemImage
-                    </th>
 
-                </tr>
-            </thead>
-            <tbody>
-                @*<tbody>
-                        @foreach (var item in Model)
-                        {
-                        <tr>
-                            <td>@item.ItemId</td>
-                            <td>@item.ItemName</td>
-                            <td>@item.Price</td>
-                            <td>@item.CategoryId</td>
-                            <td>@item.BrandId</td>
-                            <td>@item.ItemImage</td>
-                            <td></td>
-                        </tr>
-                        }
+<div style="width:90%;margin:0 auto;">
+    <table id="demoGrid" class="table table-striped table-bordered" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Action</th>
+                <th>
+                    ItemId
+                </th>
+                <th>
+                    ItemImage
+                </th>
+                <th>
+                    ItemName
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Category
+                </th>
+                <th>
+                    Brand
+                </th>
+                <th>
+                    file Path
+                </th>
 
-                    </tbody>*@
-        </table>
 
-    </div>
+            </tr>
+        </thead>
+        <tbody>
+            @*<tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>@item.ItemId</td>
+                        <td>@item.ItemName</td>
+                        <td>@item.Price</td>
+                        <td>@item.CategoryId</td>
+                        <td>@item.BrandId</td>
+                        <td>@item.ItemImage</td>
+                        <td></td>
+                    </tr>
+                    }
+
+                </tbody>*@
+    </table>
+
 </div>
 <script>
     $(document).ready(function () {
@@ -75,23 +72,36 @@
                 $('#demoGrid').DataTable({
                     data: data,
                     dom: 'lrtip',
+                    scrollX: true,
+                    scrollY: 400,
                     lengthMenu: [[5, 10, -1], [5, 10, "All"]],
                     columns:
                         [
                             {
-                                "render": function (data, type, row) {
+                                "render": function (data, type, row)
+                                {
                                     return '<a href="/Items/Edit/' + row.ItemId + '"><i class="fa fa-edit" style="font-size:17px;"></i></a>&nbsp;&nbsp;<a href="/Items/Delete/' + row.ItemId + '"><i class="fa fa-trash" style="font-size:17px;"></i></a>&nbsp;&nbsp;<a href="/Items/OpenFile/?fileName=' + encodeURIComponent(row.filePath) + '"><i class="fa fa-picture-o" style="font-size:17px;"></i></a>';
                                 }
                             },
                             { "data": "ItemId" },
+                            {
+                                "image": 'filePath',
+                                "render": function (data, type, row, meta) {
+                                    //return '<image src="/UploadedFiles/' + "Shibori Dyed Regular Kurta with Trousers & Dupatta.JPG" + '" alt="' + "image" + '" height="50" width="50"/>';
+                                    if (row.filePath != null) {
+                                        return '<image src="' + (row.filePath).replace("~", "") + '" alt="' + "image" + '" height="100" width="100"/>';
+                                    }
+                                    else { return ''; }
+                                }
+                            },
+                           
                             { "data": "ItemName", "class": "text-wrap" },
                             { "data": "Price" },
                             { "data": "CategoryName" },
                             { "data": "BrandName" },
-                            { "data": "filePath", "class": "text-wrap"},
-                            { "data": "ItemImage" }
-
-                        ]
+                            { "data": "filePath", "class": "text-wrap" }
+                           
+                        ] 
                 });
             }
         });
@@ -135,5 +145,4 @@
     });
 </script>
 <style>
- 
 </style>
