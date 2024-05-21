@@ -88,7 +88,6 @@ D:\BoutiqueManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\BoutiqueManagement\bin\Dapper.xml
 D:\BoutiqueManagement\obj\Debug\BoutiqueManagement.csproj.AssemblyReference.cache
 D:\BoutiqueManagement\obj\Debug\BoutiqueManagement.csproj.CoreCompileInputs.cache
-D:\BoutiqueManagement\obj\Debug\BoutiqueManagement.csproj.CopyComplete
 D:\BoutiqueManagement\obj\Debug\BoutiqueManagement.dll
 D:\BoutiqueManagement\obj\Debug\BoutiqueManagement.pdb
 D:\BoutiqueManagement\bin\MicroReflection.dll
@@ -114,3 +113,10 @@ D:\BoutiqueManagement\bin\Unity.Container.dll
 D:\BoutiqueManagement\bin\Unity.Abstractions.pdb
 D:\BoutiqueManagement\bin\Unity.Container.pdb
 D:\BoutiqueManagement\bin\Unity.Mvc5.dll
+D:\BoutiqueManagement\obj\Debug\Boutique.E35878FD.Up2Date
+D:\BoutiqueManagement\bin\EntityFramework.dll
+D:\BoutiqueManagement\bin\EntityFramework.SqlServer.dll
+D:\BoutiqueManagement\bin\EntityFramework.xml
+D:\BoutiqueManagement\bin\EntityFramework.SqlServer.xml
+D:\BoutiqueManagement\obj\Debug\BoutiqueManagement.Migrations.InitialMigration.resources
+D:\BoutiqueManagement\obj\Debug\BoutiqueManagement.csproj.GenerateResource.cache

@@ -42,7 +42,7 @@ namespace IdentityManagement.DAL
         {
             List<ParameterInfo> parameters = new List<ParameterInfo>();
             parameters.Add(new ParameterInfo() { ParameterName = "Username", ParameterValue = userName });
-            ApplicationUser oUser = SqlHelper.GetRecord<ApplicationUser>("GetUserByUsername", parameters);
+            ApplicationUser oUser = SqlHelper.GetRecord<ApplicationUser>("GetUserByEmail", parameters);
             return oUser;
         }
      
